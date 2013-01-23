@@ -9,8 +9,14 @@ function buildMembers() {
 //        .each(function(member) { console.log(member.photo && member.photo.thumb_link); })
         .filter(function(member) { return member.photo && member.photo.thumb_link; })
         .each(function(member) {
-          $('.members-array').append('<div class="member"><img src="' + member.photo.thumb_link + '" /></div>');
+          $('.members-array').append('<div class="member"><a href="" title="'
+                                     + member.name + '"><img src="'
+                                     + member.photo.thumb_link + '" /></a></div>');
         });
     }
   });
 }
+
+$(function() {
+  buildMembers();
+});
